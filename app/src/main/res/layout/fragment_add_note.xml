@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.AddNoteFragment">
+    tools:context=".screens.add_new_note.AddNoteFragment">
 
     <EditText
         android:id="@+id/inputNameNote"
@@ -22,6 +22,46 @@
         app:layout_constraintTop_toBottomOf="@id/inputNameNote"
         tools:ignore="Autofill,LabelFor" />
 
+    <RadioGroup
+        android:id="@+id/rgPriority"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTextNote">
+
+        <RadioButton
+            android:id="@+id/rbPriority1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/high"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbPriority2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_orange_light"
+            android:checked="true"
+            android:text="@string/normal"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbPriority3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="@string/low"
+            android:textSize="18sp" />
+    </RadioGroup>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
@@ -31,7 +71,7 @@
         android:textSize="@dimen/text_size_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputTextNote" />
+        app:layout_constraintTop_toBottomOf="@+id/rgPriority" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

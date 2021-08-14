@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.NoteFragment">
+    tools:context=".screens.note.NoteFragment">
 
     <TextView
         android:id="@+id/noteName"
@@ -30,4 +30,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/noteName"
         tools:text="Note text" />
+
+    <TextView
+        android:id="@+id/notePriority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/noteText"
+        tools:text="Note priority" />
 </androidx.constraintlayout.widget.ConstraintLayout>
