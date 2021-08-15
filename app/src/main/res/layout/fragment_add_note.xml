@@ -6,21 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".screens.add_new_note.AddNoteFragment">
 
-    <EditText
-        android:id="@+id/inputNameNote"
-        style="@style/editText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiNameNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="@string/enter_title"
+        app:boxBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,LabelFor" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/inputTextNote"
-        style="@style/editText"
+        <EditText
+            android:id="@+id/inputNameNote"
+            style="@style/editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="Autofill,LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiTextNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="@string/enter_text"
+        app:boxBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputNameNote"
-        tools:ignore="Autofill,LabelFor" />
+        app:layout_constraintTop_toBottomOf="@id/tiNameNote">
+
+        <EditText
+            android:id="@+id/inputTextNote"
+            style="@style/editText"
+            android:layout_width="match_parent"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:minHeight="100dp"
+            tools:ignore="Autofill,LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
         android:id="@+id/rgPriority"
@@ -31,7 +55,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputTextNote">
+        app:layout_constraintTop_toBottomOf="@+id/tiTextNote">
 
         <RadioButton
             android:id="@+id/rbPriority1"

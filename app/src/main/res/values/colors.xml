@@ -2,12 +2,4 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorDayPrimary">#FF5722</color>
-    <color name="colorDayPrimaryVariant">#E64A19</color>
-    <color name="colorDaySecondary">#EF9A9A</color>
-    <color name="colorDaySecondaryVariant">#D32F2F</color>
-    <color name="colorNightPrimary">#FFAB91</color>
-    <color name="colorNightPrimaryVariant">#E64A19</color>
-    <color name="colorNightSecondary">#EF9A9A</color>
-    <color name="colorNightSecondaryVariant">#EF9A9A</color>
 </resources>

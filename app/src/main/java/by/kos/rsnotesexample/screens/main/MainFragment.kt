@@ -1,22 +1,17 @@
 package by.kos.rsnotesexample.screens.main
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
 import by.kos.rsnotesexample.R
 import by.kos.rsnotesexample.databinding.FragmentMainBinding
 import by.kos.rsnotesexample.model.AppNote
 import by.kos.rsnotesexample.screens.pref.PreferenceActivity
 import by.kos.rsnotesexample.utils.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainFragment : Fragment() {
 
@@ -42,7 +37,6 @@ class MainFragment : Fragment() {
     private fun initialization() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(APP_ACTIVITY)
         CRITERIA = prefs.getString("prefSortKey", ORDER_BY_TEXT).toString()
-        Toast.makeText(APP_ACTIVITY, CRITERIA, Toast.LENGTH_SHORT).show()
         setHasOptionsMenu(true)
         mAdapter = MainAdapter()
         mBinding.rvNotes.adapter = mAdapter
@@ -73,7 +67,6 @@ class MainFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        Toast.makeText(APP_ACTIVITY, "onDestroyView", Toast.LENGTH_SHORT).show()
         super.onDestroyView()
         mViewModel.allNotes.removeObserver(mObserverList)
         mBinding.rvNotes.adapter = null
