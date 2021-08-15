@@ -2,13 +2,17 @@ package by.kos.rsnotesexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.preference.PreferenceManager
 import by.kos.rsnotesexample.database.room.AppRoomDatabase
 import by.kos.rsnotesexample.database.room.AppRoomRepository
 import by.kos.rsnotesexample.databinding.ActivityMainBinding
 import by.kos.rsnotesexample.utils.APP_ACTIVITY
+import by.kos.rsnotesexample.utils.CRITERIA
 import by.kos.rsnotesexample.utils.REPOSITORY
 
 class MainActivity : AppCompatActivity() {
@@ -24,11 +28,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(mBinding.root)
         APP_ACTIVITY = this
         mToolbar = mBinding.toolbar
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         navController = navHostFragment.navController
         setSupportActionBar(mToolbar)
         title = getString(R.string.title)
-        val dao =  AppRoomDatabase.getInstance(APP_ACTIVITY.applicationContext).getAppRoomDao()
+        val dao = AppRoomDatabase.getInstance(APP_ACTIVITY.applicationContext).getAppRoomDao()
         REPOSITORY = AppRoomRepository(dao)
     }
 

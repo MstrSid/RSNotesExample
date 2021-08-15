@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RSNotesExample">
         <activity
+            android:name=".screens.pref.PreferenceActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

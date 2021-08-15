@@ -8,10 +8,10 @@ import by.kos.rsnotesexample.utils.REPOSITORY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NoteFragmentViewModel(application: Application):AndroidViewModel(application) {
-    fun delete(note: AppNote, onSuccess:()->Unit)=
+class NoteFragmentViewModel(application: Application) : AndroidViewModel(application) {
+    fun delete(note: AppNote, onSuccess: () -> Unit) =
         viewModelScope.launch(Dispatchers.IO) {
-            REPOSITORY.delete(note){
+            REPOSITORY.delete(note) {
                 onSuccess()
             }
         }

@@ -38,6 +38,7 @@ class NoteFragment : Fragment() {
         initialization()
     }
 
+
     private fun initialization() {
         setHasOptionsMenu(true)
         mViewModel = ViewModelProvider(this).get(NoteFragmentViewModel::class.java)
