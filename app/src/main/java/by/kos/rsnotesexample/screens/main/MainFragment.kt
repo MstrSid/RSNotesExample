@@ -36,13 +36,12 @@ class MainFragment : Fragment() {
 
     private fun initialization() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(APP_ACTIVITY)
-        CRITERIA = prefs.getString("prefSortKey", ORDER_BY_TEXT).toString()
+        CRITERIA = prefs.getString("prefSortKey", ORDER_BY_TITLE).toString()
         setHasOptionsMenu(true)
         mAdapter = MainAdapter()
         mBinding.rvNotes.adapter = mAdapter
         mObserverList = Observer {
-            val list = it
-            mAdapter.setList(list)
+            mAdapter.submitList(it)
         }
         mViewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
         mViewModel.allNotes.observe(this, mObserverList)

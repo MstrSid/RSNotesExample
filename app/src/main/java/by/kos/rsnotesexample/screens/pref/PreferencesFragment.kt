@@ -1,16 +1,11 @@
 package by.kos.rsnotesexample.screens.pref
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceManager
 import by.kos.rsnotesexample.R
-import by.kos.rsnotesexample.utils.APP_ACTIVITY
-import by.kos.rsnotesexample.utils.CRITERIA
-import by.kos.rsnotesexample.utils.ORDER_BY_TEXT
 
 class PreferencesFragment : PreferenceFragmentCompat() {
 
