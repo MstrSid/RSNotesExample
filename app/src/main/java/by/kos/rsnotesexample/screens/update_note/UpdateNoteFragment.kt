@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import by.kos.rsnotesexample.R
@@ -40,8 +41,7 @@ class UpdateNoteFragment : Fragment() {
         mViewModel = ViewModelProvider(this).get(UpdateNoteViewModel::class.java)
         mBinding.inputNameNote.setText(mCurrentNote.name)
         mBinding.inputTextNote.setText(mCurrentNote.text)
-        mBinding.rgPriority.check(mCurrentNote.priority)
-        Toast.makeText(activity, mCurrentNote.name + mCurrentNote.text+ mCurrentNote.priority, Toast.LENGTH_LONG).show()
+        (mBinding.rgPriority.getChildAt(mCurrentNote.priority-1) as RadioButton).isChecked = true
 
         mBinding.btnUpdate.setOnClickListener {
             val name = mBinding.inputNameNote.text.toString()
