@@ -39,6 +39,9 @@
             app:popEnterAnim="@anim/nav_default_pop_exit_anim"
             app:popExitAnim="@anim/nav_default_pop_enter_anim"
             app:popUpTo="@id/navigation_graph" />
+        <action
+            android:id="@+id/action_noteFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
@@ -53,6 +56,20 @@
             app:launchSingleTop="true"
             app:popEnterAnim="@anim/nav_default_pop_exit_anim"
             app:popExitAnim="@anim/nav_default_pop_enter_anim"
+            app:popUpTo="@id/navigation_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateNoteFragment"
+        android:name="by.kos.rsnotesexample.screens.update_note.UpdateNoteFragment"
+        android:label="UpdateNoteFragment" >
+        <action
+            android:id="@+id/action_updateNoteFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
 </navigation>

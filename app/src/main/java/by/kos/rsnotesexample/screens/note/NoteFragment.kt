@@ -42,7 +42,7 @@ class NoteFragment : Fragment() {
     private fun initialization() {
         setHasOptionsMenu(true)
         mViewModel = ViewModelProvider(this).get(NoteFragmentViewModel::class.java)
-        mBinding.noteName.text = mCurrentNote.text
+        mBinding.noteName.text = mCurrentNote.name
         mBinding.noteText.text = mCurrentNote.text
         var colorId = 0
         when (mCurrentNote.priority) {
@@ -63,6 +63,9 @@ class NoteFragment : Fragment() {
             }
         }
         mBinding.notePriority.setBackgroundColor(colorId)
+        mBinding.btnEdit.setOnClickListener {
+            goEdit(mCurrentNote)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -85,5 +88,13 @@ class NoteFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        fun goEdit(note: AppNote) {
+            val bundle = Bundle()
+            bundle.putSerializable("note", note)
+            APP_ACTIVITY.navController.navigate(R.id.action_noteFragment_to_updateNoteFragment, bundle)
+        }
     }
 }

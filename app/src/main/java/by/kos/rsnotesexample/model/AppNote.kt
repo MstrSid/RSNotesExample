@@ -11,11 +11,11 @@ data class AppNote(
     val id: Int = 0,
 
     @ColumnInfo
-    val name: String = "",
+    var name: String = "",
 
     @ColumnInfo
-    val text: String = "",
+    var text: String = "",
 
     @ColumnInfo
-    val priority: Int = 0
+    var priority: Int = 0
 ): Serializable
