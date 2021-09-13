@@ -37,6 +37,7 @@ class MainFragment : Fragment() {
     private fun initialization() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(APP_ACTIVITY)
         CRITERIA = prefs.getString("prefSortKey", ORDER_BY_TITLE).toString()
+        TYPE_DATASOURCE = prefs.getString("prefImplementation", TYPE_ROOM).toString()
         setHasOptionsMenu(true)
         mAdapter = MainAdapter()
         mBinding.rvNotes.adapter = mAdapter

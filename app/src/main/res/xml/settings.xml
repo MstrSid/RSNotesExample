@@ -11,4 +11,13 @@
         android:summary="Choose how sort notes on main screen"
         android:title="Sort options">
     </ListPreference>
+    <ListPreference
+        android:icon="@drawable/ic_data"
+        android:entries="@array/dsEntries"
+        android:entryValues="@array/dsValues"
+        android:key="prefImplementation"
+        android:defaultValue="ROOM"
+        android:summary="Choose room or cursor impl"
+        android:title="Data source">
+    </ListPreference>
 </androidx.preference.PreferenceScreen>
